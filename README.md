@@ -1,5 +1,6 @@
 # Bluetooth_Xmas_Lights
 Arduino+Android+Bluetooth+RGB LED Strip=Awesome
+
 Created By Joshua Janssen on the 16th of December 2015
 
 This is just a project I made to make christmas this year a hell of a lot more interesting (for me)
