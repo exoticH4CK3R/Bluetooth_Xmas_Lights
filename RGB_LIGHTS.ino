@@ -1,72 +1,73 @@
-int redPin = 3;
-int greenPin = 5;
-int bluePin = 6;
+//Programmed by Joshua Janssen on the 16th of december 2015
+int redPin = 3;   //Red Led on pin 3
+int greenPin = 5; //Green Led on pin 5
+int bluePin = 6;  //Blue Led on pin 6
 int incomingByte;
-#define FADESPEED 5
+#define FADESPEED 5 //Speed of Fade Program
 
 
 void setup() {
-  Serial.begin(9600);
-  pinMode(redPin, OUTPUT);
-  pinMode(greenPin, OUTPUT);
-  pinMode(bluePin, OUTPUT);
+  Serial.begin(9600);   //Begin serial 9600 baud rate
+  pinMode(redPin, OUTPUT);  //Red led is an Output
+  pinMode(greenPin, OUTPUT);  //Green led is an output
+  pinMode(bluePin, OUTPUT); //blue led is an output
 }
 
 void loop() {
-  if (Serial.available() > 0) {
-    incomingByte = Serial.read();
+  if (Serial.available() > 0) {     //Read if serial is available
+    incomingByte = Serial.read();   //define incomingByte as reading serial data?
   }
 
-if (incomingByte == 'O') {
+if (incomingByte == 'O') {    //if incoming data is a capital o turn all leds off
     
-      digitalWrite(redPin, LOW);
-      digitalWrite(greenPin, LOW);
-      digitalWrite(bluePin, LOW);
+      digitalWrite(redPin, LOW);    //red led is low
+      digitalWrite(greenPin, LOW);    //green led is low
+      digitalWrite(bluePin, LOW);   //blue led is low
     }
- if (incomingByte == 'A') {
+ if (incomingByte == 'A') {   //if incoming data is a capital a turn green and blue leds on
     
-      digitalWrite(redPin, LOW);
-      digitalWrite(greenPin, HIGH);
-      digitalWrite(bluePin, HIGH);
+      digitalWrite(redPin, LOW);      //red is low
+      digitalWrite(greenPin, HIGH);   //green is high
+      digitalWrite(bluePin, HIGH);    //blue is high
     }
-  if (incomingByte == 'Y') {
+  if (incomingByte == 'Y') {    //if incoming data is a capital y turn red and green leds on
     
-      digitalWrite(redPin, HIGH);
-      digitalWrite(greenPin, HIGH);
-      digitalWrite(bluePin, LOW);
+      digitalWrite(redPin, HIGH);   //red is high
+      digitalWrite(greenPin, HIGH);   //green is high
+      digitalWrite(bluePin, LOW);   //blue is low
     }
-  if (incomingByte == 'W') {
+  if (incomingByte == 'W') {    //if incoming data is a capital w turn all leds on
     
-      digitalWrite(redPin, HIGH);
-      digitalWrite(greenPin, HIGH);
-      digitalWrite(bluePin, HIGH);
+      digitalWrite(redPin, HIGH);   //red is high
+      digitalWrite(greenPin, HIGH);   //green is high
+      digitalWrite(bluePin, HIGH);    //blue is high
     }  
-    if (incomingByte == 'R') {
+    if (incomingByte == 'R') {    //if incoming data is a capital r turn red led on
     
-      digitalWrite(redPin, HIGH);
-      digitalWrite(greenPin, LOW);
-      digitalWrite(bluePin, LOW);
+      digitalWrite(redPin, HIGH);   //red is high
+      digitalWrite(greenPin, LOW);    //green is low
+      digitalWrite(bluePin, LOW);   //blue is low
     }
-    if (incomingByte == 'G') {
+    if (incomingByte == 'G') {    //if incoming data is a capital g turn green led on
     
-      digitalWrite(greenPin, HIGH);
-      digitalWrite(redPin, LOW);
-      digitalWrite(bluePin, LOW);
+      digitalWrite(greenPin, HIGH);   //green is high
+      digitalWrite(redPin, LOW);    //red is low
+      digitalWrite(bluePin, LOW);   //blue is low
     }
-    if (incomingByte == 'B') {
+    if (incomingByte == 'B') {    //if incoming data is a capital b turn blue led on
     
-      digitalWrite(bluePin, HIGH);
-      digitalWrite(greenPin, LOW);
-      digitalWrite(redPin, LOW);
+      digitalWrite(bluePin, HIGH);    //blue is high
+      digitalWrite(greenPin, LOW);    //green is low
+      digitalWrite(redPin, LOW);    //red is low
     }
-    if (incomingByte == 'P') {
+    if (incomingByte == 'P') {    //if incoming data is a capital p turn blue and red leds on
     
-      digitalWrite(redPin, HIGH);
-      digitalWrite(greenPin, LOW);
-      digitalWrite(bluePin, HIGH);
+      digitalWrite(redPin, HIGH);   //red is high
+      digitalWrite(greenPin, LOW);    //green is low
+      digitalWrite(bluePin, HIGH);    //blue is high
     }
 
-   if (incomingByte == 'F') {
+   if (incomingByte == 'F') {   //if incoming data is a capital f cycle thru the colour spectrum 10 times
     for(int i = 0; i < 10; i++)
      {int r, g, b;
  
@@ -103,7 +104,7 @@ if (incomingByte == 'O') {
 }
    }
 
-  if (incomingByte == 'T') {
+  if (incomingByte == 'T') {    //if incoming data is a capital t cycle thru the colour spectrum 100 times
     for(int i = 0; i < 100; i++)
      {int r, g, b;
  
