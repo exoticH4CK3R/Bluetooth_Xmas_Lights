@@ -16,3 +16,6 @@ The Circuit consists of the following:
 1X RGB_LIGHTS.INO,
 1X USB Cable (for proggramming),
 1X PC or Mac with Arduino and MIT App inventor 2
+
+
+The password for the app is "santa" (without "" marks) 
